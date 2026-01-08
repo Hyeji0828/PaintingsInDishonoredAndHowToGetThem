@@ -1,7 +1,7 @@
 function Card({ title, eng_title, artist, artist_ingame, painting, images, content}){
     return (
         <div style={cardStyle}>
-            <div><img src={painting} style={paintingStyle} alt={eng_title} /></div>
+            <div><img src={process.env.PUBLIC_URL + painting} style={paintingStyle} alt={eng_title} /></div>
             <h2>{title}</h2>
             <p>{eng_title}</p>
             <p>{artist}</p>
