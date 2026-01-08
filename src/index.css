@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Bilbo&family=Cinzel:wght@400..900&family=Moon+Dance&family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Qwitcher+Grypen:wght@400;700&display=swap');
+
 @theme {
+    --font-eng-title: 'Playfair Display', serif;
+    --font-kor: 'Nanum Myeongjo', serif;
+    --font-dishonored : 'Cinzel', serif;
+    --font-anton: 'Bilbo', cursive;
+    --font-cedric: 'Qwitcher Grypen', cursive;
+    --font-sergey: 'Moon Dance', cursive;
+    --font-delilah: 'Beau Rivage', cursive;
+
     @keyframes fadeIn {
         from { opacity: 0;}
         to {opacity: 1;}

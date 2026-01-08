@@ -9,8 +9,8 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
     // 이미지 경로 계산
     const allImages = useMemo(() => {
         let mainImg;
-        if (type==="paintings") { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.jpg`;}
-        else { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.png`;}
+        if (type==="souvenir") { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.png`;}
+        else { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.jpg`;}
         const subImgs = Array.from({ length: images_count || 0}, (_, i) => {
             return `${BASE_URL}/${game}/${mission}/${type}/${id}_${i + 1}.jpg`;
         });
@@ -32,6 +32,19 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
         setSelectedImg(allImages[prevIdx]);
     }
 
+    // 아티스트 별 폰트
+    let artistFont, artistIngameFont = "font-eng-title";
+    if (type === 'paintings'){
+        const artistFonts = {
+        "Cedric Peyravernay": "font-cedric text-[24px]",
+        "Sergey Kolesov": "font-sergey text-[20px]",
+        "Anton Sokolov": "font-anton text-[20px]",
+        "Delilah Copperspoon" : "font-delilah text-[20px]"
+        };
+        artistFont = artistFonts[details.artist];
+        artistIngameFont = artistFonts[details.artist_ingame]
+    } 
+
     return (
         // 카드의 전체적인 외곽선과 그림자, 배경색 지정
         <div className="flex flex-col md:flex-row max-w-4xl bg-white my-8 rounded-xl shadow-lg overflow-hidden border border-gray-200 mx-auto">           
@@ -45,23 +58,22 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                 />
             </div>
 
-
             {/* 오른쪽: 상세 정보 섹션 */}
             <div className="md:w-2/3 p-6 flex flex-col">
                 <div className="mb-4">
-                    <h2 className="text-2xl font-serif font-bold text-gray-900">{title}</h2>
-                    <p className="text-sm text-amber-700 italic">{eng_title}</p>
+                    <h2 className="text-2xl font-bold text-gray-900 font-kor">{title}</h2>
+                    <p className="text-sm text-amber-700 font-dishonored">{eng_title}</p>
                 </div>
 
                 {type==="paintings" &&
                     <div className="grid grid-cols-2 gap-4 mb-4 text-sm border-t border-b py-3 border-gray-100">
                         <div>
                             <span className="block text-gray-400 uppercase text-[10px] font-bold">Painted by</span>
-                            <p className="font-medium text-gray-800">{details.artist}</p>
+                            <p className={`${artistFont} text-gray-800`}>{details.artist}</p>
                         </div>
                         <div>
                             <span className="block text-gray-400 uppercase text-[10px] font-bold">Painted by (In-Game)</span>
-                            <p className="font-medium text-gray-800">{details.artist_ingame}</p>
+                            <p className={`${artistIngameFont} text-gray-800`}>{details.artist_ingame}</p>
                         </div>
                     </div>
                 }
