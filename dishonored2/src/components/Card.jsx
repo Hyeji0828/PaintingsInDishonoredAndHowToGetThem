@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
-const BASE_URL = import.meta.env.BASE_URL;
-
-function Card({ game, type, mission, title, eng_title, images, content, details }){
+function Card({ id, game, type, mission, title, eng_title, images_count, content, details }){
+    const BASE_URL = import.meta.env.BASE_URL;
+    
     // 크게 보기 모달을 위한 상태 관리
     const [selectedImg, setSelectedImg] = useState(null);
 
-    // 이미지 갤러리를 위한 인덱스 관리
-    if (type === "Paintings"){
-        const allImages = [details.painting, ...images];
-    }
-    const allImages = [...images];
+    // 이미지 경로 계산
+    const allImages = useMemo(() => {
+        let mainImg;
+        if (type==="paintings") { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.jpg`;}
+        else { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.png`;}
+        const subImgs = Array.from({ length: images_count || 0}, (_, i) => {
+            return `${BASE_URL}/${game}/${mission}/${type}/${id}_${i + 1}.jpg`;
+        });
+        return [mainImg, ...subImgs];
+    }, [id, game, mission, type, images_count, BASE_URL]);
+
     const currentIndex = allImages.indexOf(selectedImg)
 
     // 다음 이미지로 이동
@@ -28,20 +34,16 @@ function Card({ game, type, mission, title, eng_title, images, content, details 
 
     return (
         // 카드의 전체적인 외곽선과 그림자, 배경색 지정
-        <div className="flex flex-col md:flex-row max-w-4xl bg-white my-8 rounded-xl shadow-lg overflow-hidden border border-gray-200 mx-auto">
-            
-            
+        <div className="flex flex-col md:flex-row max-w-4xl bg-white my-8 rounded-xl shadow-lg overflow-hidden border border-gray-200 mx-auto">           
             {/* 왼쪽: 메인 성화(Painting) 이미지 */}
-            {type==="Paintings" &&
-                <div className="md:w-1/3 bg-gray-100 flex justify-center items-center p-4 custom-zoom-in">
-                    <img 
-                        src={`${BASE_URL}${details.painting}`}
-                        className="w-full h-auto shadow-md border-4 border-white transform hover:scale-105 transition-transform duration-300" 
-                        alt={eng_title}
-                        onClick={() => setSelectedImg(details.painting)}
-                    />
-                </div>
-            }
+            <div className="md:w-1/3 bg-gray-100 flex justify-center items-center p-4 custom-zoom-in">
+                <img 
+                    src={allImages[0]}
+                    className="w-full h-auto transform hover:scale-105 transition-transform duration-300" 
+                    alt={eng_title}
+                    onClick={() => setSelectedImg(allImages[0])}
+                />
+            </div>
 
 
             {/* 오른쪽: 상세 정보 섹션 */}
@@ -75,13 +77,13 @@ function Card({ game, type, mission, title, eng_title, images, content, details 
                 <div className="mb-4">
                     <span className="block text-gray-400 uppercase text-[10px] font-bold mb-2">How to get</span>
                     <div className="flex gap-2 overflow-x-auto pb-2">
-                        {images.map((image, index) => (
+                        {allImages.slice(1).map((imagePath, index) => (
                             <img 
                                 key={index} 
-                                src={`${BASE_URL}${image}`}
+                                src={imagePath}
                                 className="w-20 h-20 object-cover rounded border border-gray-200 hover:border-amber-500 cursor-pointer transition-colors"
-                                alt={`Location step ${index + 1}`}
-                                onClick={() => setSelectedImg(image)}
+                                alt={`How to get ${index + 1}`}
+                                onClick={() => setSelectedImg(imagePath)}
                             />
                         ))}
                     </div>
