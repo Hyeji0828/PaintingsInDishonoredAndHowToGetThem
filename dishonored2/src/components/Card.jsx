@@ -57,15 +57,15 @@ function Card({ title, eng_title, artist, artist_ingame, painting, images, conte
                 </p>
             </div>
 
-            {/* 모달 */}
+            {/* 이미지 확대 모달 */}
             {selectedImg && (
                 <div
-                    className = "fixed inset-0 bg-black/80 z-50 flex justify-center items-center cursor-zoom-out p-4 animate-in animate-duration-300"
+                    className = "fixed inset-0 bg-black/80 z-50 flex justify-center items-center cursor-zoom-out p-4 animate-[fadeIn_0.3s_ease-in-out]"
                     onClick={()=> setSelectedImg(null)}
                 >
                     <img
                         src={selectedImg}
-                        className = "max-h-full max-w-full rounded-lg shadow-2xl zoom-in-95 animate-duration-300"
+                        className = "max-h-full max-w-full rounded-lg shadow-2xl animate-[zoomIn_0.3s_ease-out]"
                         alt="enlarged"
                     />
                     <button className="absolute top-5 right-5 text-white text-3xl font-bold cursor-pointer">&times;</button>
