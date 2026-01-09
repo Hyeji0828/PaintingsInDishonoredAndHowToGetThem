@@ -3,7 +3,7 @@ import {motion, AnimatePresence} from 'framer-motion';
 import Card from '../components/Card'
 import data from '../data/data.json';
 
-const TYPE_ORDER = ["paintings", "safes", "souvenir", "runes", "bonecharms"];
+const TYPE_ORDER = ["paintings", "safes", "souvenir", "blueprints", "runes", "bonecharms"];
 
 const D2Page = () => {
     // 탭 선택 상태
