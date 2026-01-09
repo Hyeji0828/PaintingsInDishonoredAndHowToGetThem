@@ -265,9 +265,7 @@
         "eng_title": "Bonecharms1,2",
         "images_count": 1,
         "content": "에밀리의 방 책상 옆에서 찾을 수 있다.",
-        "details": {
-            "bonecharm_type": "뼈부적"
-        }
+        "details": {}
     },
     {
         "id": "02",
@@ -278,9 +276,7 @@
         "eng_title": "Bonecharms3",
         "images_count": 4,
         "content": "송장파리가 잠식한 아파트에서 송장파리 둥지를 파괴하고 찾을 수 있다.",
-        "details": {
-            "bonecharm_type": "뼈부적"
-        }
+        "details": {}
     },
     {
         "id": "03",
@@ -291,9 +287,7 @@
         "eng_title": "Bonecharms4",
         "images_count": 4,
         "content": "빛의 장벽 근처 주시자들이 수색하고 있는 건물 2층 나무 바닥에서 찾을 수 있다.",
-        "details": {
-            "bonecharm_type": "뼈부적"
-        }
+        "details": {}
     },
     {
         "id": "04",
@@ -304,9 +298,7 @@
         "eng_title": "Bonecharms5",
         "images_count": 3,
         "content": "건물 옥상 송장파리와 시체 근처에서 찾을 수 있다.",
-        "details": {
-            "bonecharm_type": "뼈부적"
-        }
+        "details": {}
     },
     {
         "id": "05",
@@ -317,9 +309,7 @@
         "eng_title": "Bonecharms6",
         "images_count": 3,
         "content": "주시자의 전초기지 4층 심문실에서 찾을 수 있다.",
-        "details": {
-            "bonecharm_type": "부패한 뼈부적"
-        }
+        "details": {}
     },
     {
         "id": "06",
@@ -330,9 +320,7 @@
         "eng_title": "Bonecharms7",
         "images_count": 1,
         "content": "주시자의 전초기지 앞 설교하는 주시자의 근처에서 얻을 수 있다.",
-        "details": {
-            "bonecharm_type": "뼈부적"
-        }
+        "details": {}
     },
     {
         "id": "07",
@@ -343,8 +331,6 @@
         "eng_title": "Bonecharms8",
         "images_count": 3,
         "content": "애더마이어 철도역 근처 윈슬로우 금고 회사 안 금고에서 찾을 수 있다.",
-        "details": {
-            "bonecharm_type": "뼈부적"
-        }
+        "details": {}
     }
 ]
