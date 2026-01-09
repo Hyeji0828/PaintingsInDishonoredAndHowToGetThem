@@ -6,14 +6,15 @@ const artistFonts = {
     "Anton Sokolov": "font-anton text-[20px]",
     "Delilah Copperspoon" : "font-delilah text-[20px]"
     };
-const typeColors = {
-    paintings : 'var(--color-paintings)',
-    souvenir : 'var(--color-souvenir)',
-    safes : 'var(--color-safes)',
-    blueprints : 'var(--color-blueprints)',
-    bonecharms : 'var(--color-bonecharms)',
-    runes : 'var(--color-runes)'
-};
+
+const imgSizes = {
+    "paintings" : "w-full h-auto",
+    "safes" : "w-full h-auto",
+    "souvenir" : "w-full h-auto",
+    "blueprints" : "w-40 h-auto",
+    "runes" : "w-50 h-auto",
+    "bonecharms" : "w-50 h-auto"
+}
 
 function Card({ id, game, type, mission, title, eng_title, images_count, content, details }){
     const BASE_URL = import.meta.env.BASE_URL;
@@ -25,6 +26,7 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
     const allImages = useMemo(() => {
         let mainImg;
         if (type==="souvenir") { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.png`;}
+        else if (type==="runes" || type==="bonecharms") { mainImg = `${BASE_URL}/${game}/${type}.png`;}
         else { mainImg = `${BASE_URL}/${game}/${mission}/${type}/${id}_main.jpg`;}
         const subImgs = Array.from({ length: images_count || 0}, (_, i) => {
             return `${BASE_URL}/${game}/${mission}/${type}/${id}_${i + 1}.jpg`;
@@ -52,9 +54,15 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
     if (type === 'paintings'){
         artistFont = artistFonts[details.artist];
         artistIngameFont = artistFonts[details.artist_ingame]
-    } 
+    }
+    // 타입 별 이미지 크기
+    const imgSize = imgSizes[type];
+    console.log(imgSize);
+    
     // 타입 별 색상
     const typeColor= `var(--color-${type})`;
+
+
 
     return (
         // 카드의 전체적인 외곽선과 그림자, 배경색 지정
@@ -63,7 +71,7 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
             <div className="md:w-1/3 bg-gray-100 flex justify-center items-center p-4 custom-zoom-in">
                 <img 
                     src={allImages[0]}
-                    className="w-full h-auto transform hover:scale-105 transition-transform duration-300" 
+                    className={`${imgSize} transform hover:scale-105 transition-transform duration-300`}
                     alt={eng_title}
                     onClick={() => setSelectedImg(allImages[0])}
                 />
