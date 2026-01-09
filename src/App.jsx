@@ -1,10 +1,10 @@
-import D2Page from './pages/d2';
+import MissionPage from './pages/missions';
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="space-y-8">
-        <D2Page/>
+        <MissionPage/>
       </div>
     </div>
   );

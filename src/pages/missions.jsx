@@ -4,8 +4,9 @@ import Card from '../components/Card'
 import data from '../data/data.json';
 
 const TYPE_ORDER = ["paintings", "safes", "souvenir", "blueprints", "runes", "bonecharms"];
+const BASE_URL = import.meta.env.BASE_URL;
 
-const D2Page = () => {
+const MissionPage = () => {
     // 탭 선택 상태
     const [activeTab, setActiveTab] = useState("All");
 
@@ -32,7 +33,12 @@ const D2Page = () => {
 
     return (
       <div className="max-w-7xl mx-auto p-10">
-        <h1 className="font-dishonored text-5xl mb-12 text-center italic">Dishonored 2</h1>
+        <div className="flex justify-center">
+          <img 
+            src={`${BASE_URL}/Dishonored_2_logo.png`}
+            className="mb-15"
+          />
+        </div>
 
         {/* 카테고리 선택창*/}
         <div className="flex justify-center gap-4 mb-16">
@@ -43,8 +49,8 @@ const D2Page = () => {
               className={`
                 px-8 py-2 rounded-full transition-all duration-300 font-medium
                 ${activeTab === tab 
-                  ? 'bg-slate-900 text-white scale-105 shadow-lg' // 선택된 스타일
-                  : 'bg-slate-100 text-slate-500 hover:bg-slate-200' // 비선택 스타일
+                  ? 'bg-primary text-white scale-105 shadow-lg' // 선택된 스타일
+                  : 'bg-gray-200 text-slate-500 hover:bg-slate-200' // 비선택 스타일
                 }
               `}
             >
@@ -94,4 +100,4 @@ const D2Page = () => {
     )
 }
 
-export default D2Page;
+export default MissionPage;
