@@ -2,6 +2,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Bilbo&family=Cinzel:wght@400..900&family=Moon+Dance&family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Qwitcher+Grypen:wght@400;700&display=swap');
 
+:root {
+    --color-paintings: #ba162f;
+    --color-souvenir: #62d8b6;
+    --color-safes: #777374;
+    --color-blueprints: #1d536d;
+    --color-bonecharms : #720755;
+    --color-runes: #6f71a1;
+}
+
 @theme {
     --font-eng-title: 'Playfair Display', serif;
     --font-kor: 'Nanum Myeongjo', serif;

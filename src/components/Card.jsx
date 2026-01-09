@@ -1,8 +1,23 @@
 import React, { useState, useMemo } from 'react';
 
+const artistFonts = {
+    "Cedric Peyravernay": "font-cedric text-[24px]",
+    "Sergey Kolesov": "font-sergey text-[20px]",
+    "Anton Sokolov": "font-anton text-[20px]",
+    "Delilah Copperspoon" : "font-delilah text-[20px]"
+    };
+const typeColors = {
+    paintings : 'var(--color-paintings)',
+    souvenir : 'var(--color-souvenir)',
+    safes : 'var(--color-safes)',
+    blueprints : 'var(--color-blueprints)',
+    bonecharms : 'var(--color-bonecharms)',
+    runes : 'var(--color-runes)'
+};
+
 function Card({ id, game, type, mission, title, eng_title, images_count, content, details }){
     const BASE_URL = import.meta.env.BASE_URL;
-    
+
     // 크게 보기 모달을 위한 상태 관리
     const [selectedImg, setSelectedImg] = useState(null);
 
@@ -35,15 +50,11 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
     // 아티스트 별 폰트
     let artistFont, artistIngameFont = "font-eng-title";
     if (type === 'paintings'){
-        const artistFonts = {
-        "Cedric Peyravernay": "font-cedric text-[24px]",
-        "Sergey Kolesov": "font-sergey text-[20px]",
-        "Anton Sokolov": "font-anton text-[20px]",
-        "Delilah Copperspoon" : "font-delilah text-[20px]"
-        };
         artistFont = artistFonts[details.artist];
         artistIngameFont = artistFonts[details.artist_ingame]
     } 
+    // 타입 별 색상
+    const typeColor= `var(--color-${type})`;
 
     return (
         // 카드의 전체적인 외곽선과 그림자, 배경색 지정
@@ -78,11 +89,13 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                     </div>
                 }
 
-                {type==="bonecharm" &&
+                {(type==="bonecharm" || type==="blueprints") &&
+                <div className="grid grid-cols-2 gap-4 mb-4 text-sm border-t border-b py-3 border-gray-100" >
                     <div>
                         <span className="block text-gray-400 uppercase text-[10px] font-bold">Effect</span>
-                        <p className="font-medium text-gray-800">{details.effect}</p>
+                        <p className="font-medium text-gray-800 pt-3">{details.effect}</p>
                     </div>
+                </div>
                 }
 
                 {/* 획득 방법(Images) 섹션 */}
@@ -93,7 +106,7 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                             <img 
                                 key={index} 
                                 src={imagePath}
-                                className="w-20 h-20 object-cover rounded border border-gray-200 hover:border-amber-700 cursor-pointer transition-colors"
+                                className={`w-20 h-20 object-cover rounded border border-gray-200 hover:border-amber-700 cursor-pointer transition-colors`}
                                 alt={`How to get ${index + 1}`}
                                 onClick={() => setSelectedImg(imagePath)}
                             />
@@ -101,7 +114,8 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                     </div>
                 </div>
 
-                <p className="text-gray-600 text-sm leading-relaxed bg-[#000000]/5 p-3 rounded-lg border-l-4 border-amber-700">
+                <p style={{borderColor : typeColor}}
+                    className={'text-gray-600 text-sm leading-relaxed bg-[#000000]/5 p-3 rounded-lg border-l-4'}>
                     {content}
                 </p>
             </div>
