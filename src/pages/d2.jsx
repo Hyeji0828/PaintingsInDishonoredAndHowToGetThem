@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import {motion, AnimatePresence} from 'framer-motion';
 import Card from '../components/Card'
 import data from '../data/data.json';
+
+const TYPE_ORDER = ["paintings", "safes", "souvenir", "runes", "bonecharms"];
 
 const D2Page = () => {
     // 탭 선택 상태
@@ -14,9 +17,18 @@ const D2Page = () => {
       "m2" : "Edge of the World"
     }
 
+    // 탭(mission) 별로 필터링
     const filteredData = activeTab ==="All"
         ? data
         : data.filter(item=>item.mission === activeTab);
+
+    // 카테고리 별로 분류
+    const groupedData = filteredData.reduce((acc, item) => {
+      const group = item.type;
+      if (!acc[group]) acc[group] = [];
+      acc[group].push(item);
+      return acc;
+    }, {});
 
     return (
       <div className="max-w-7xl mx-auto p-10">
@@ -24,7 +36,6 @@ const D2Page = () => {
 
         {/* 카테고리 선택창*/}
         <div className="flex justify-center gap-4 mb-16">
-
           {missions.map((tab) => (
             <button
               key={tab}
@@ -45,9 +56,35 @@ const D2Page = () => {
         {/* 필터링된 데이터 출력 */}
         <div  key={activeTab}
               className="">
-          {filteredData.map((item) => (
-            <Card key={item.id} {...item} />
-          ))}
+              <AnimatePresence>
+              
+              {TYPE_ORDER.map(groupName => {
+                // 데이터가 없는 카테고리 예외
+                const imtemsInGroup = groupedData[groupName] || [];
+                if(imtemsInGroup.length === 0) return;
+                return (
+                  <section key={groupName} className="mb-16">
+                    <h2 className="font-dishonored text-2xl">
+                      {groupName}
+                    </h2>
+                    <div>
+                      {imtemsInGroup.map(item => 
+                        <motion.div
+                        key={item.game + item.mission + item.type + item.id}
+                        layout
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        exit={{opacity:0, scale: 0.9}}
+                        transition={{duration:0.5}}
+                        >
+                        <Card key={item.game + item.mission + item.type + item.id} {...item} />
+                        </motion.div>
+                      )}
+                    </div>
+                  </section>
+                  );
+              })}
+            </AnimatePresence>
         </div>
 
         {filteredData.length === 0 && (

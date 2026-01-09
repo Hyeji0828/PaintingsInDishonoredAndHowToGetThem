@@ -57,7 +57,6 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
     }
     // 타입 별 이미지 크기
     const imgSize = imgSizes[type];
-    console.log(imgSize);
     
     // 타입 별 색상
     const typeColor= `var(--color-${type})`;
