@@ -1,12 +1,17 @@
-import MissionPage from './pages/missions';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import {ByMission, ByType} from './pages/d2_collection';
+import { BASE_URL } from './constants/config';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      <div className="space-y-8">
-        <MissionPage/>
-      </div>
-    </div>
+    <BrowserRouter basename={BASE_URL}>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/by-mission" element={<ByMission/>}/>
+        <Route path="/by-type" element={<ByType/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
