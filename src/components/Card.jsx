@@ -94,8 +94,8 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                     </div>
                 }
 
-                {(type==="bonecharm" || type==="blueprints") &&
-                <div className="grid grid-cols-2 gap-4 mb-4 text-sm border-t border-b py-3 border-gray-100" >
+                {(type==="blueprints") &&
+                <div className="gap-4 mb-4 text-sm border-t border-b py-3 border-gray-100" >
                     <div>
                         <span className="block text-gray-400 uppercase text-[10px] font-bold">Effect</span>
                         <p className="font-medium text-gray-800 pt-3">{details.effect}</p>
