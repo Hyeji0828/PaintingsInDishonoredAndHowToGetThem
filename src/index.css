@@ -9,7 +9,6 @@
     --color-blueprints: #1d536d;
     --color-bonecharms : #62d8b6;
     --color-runes: #9D4EDD;
-
 }
 
 @theme {
@@ -21,7 +20,7 @@
     --font-sergey: 'Moon Dance', cursive;
     --font-delilah: 'Beau Rivage', cursive;
 
-    --color-primary: #3B1FAA;
+    --color-primary: #ba162f;
     --color-secondary: #B570C9;
 
     @keyframes fadeIn {
