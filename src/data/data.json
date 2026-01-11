@@ -148,7 +148,7 @@
         "images_count" : 3,
         "content" : "부둣가의 창문이 열린 아파트에 위치한 금고 안에서 찾을 수 있다. 금고는 비밀번호 없이 열 수 있다.",
         "details":{
-            "effect" : "소이 화살을 구매할 수 있게 된다."
+            "effect" : "암시장에서 소이 화살을 구매할 수 있습니다. 적을 불태우는 화살입니다."
         }
     },
     {
@@ -161,7 +161,7 @@
         "images_count": 2,
         "content": "주시자의 전초기지 3층에서 얻을 수 있다.",
         "details": {
-            "effect" : "볼트 화살의 효과를 강화한다."
+            "effect" : "더 큰 피해를 입히는 화살입니다."
         }
     },
     {
@@ -354,7 +354,7 @@
         "images_count": 5,
         "content": "주회랑에서 2층으로 접근하면 발견할 수 있는 금고에서 찾을 수 있다.",
         "details": {
-            "effect" : "전투 중 수면화살"
+            "effect" : "적을 즉시 잠들게 만듭니다."
         }
     },
     {
@@ -367,7 +367,7 @@
         "images_count": 5,
         "content": "6층에 있는 해밀턴의 사무실에서 찾을 수 있으며 사무실 열쇠는 질병 대책 부서에서 찾을 수 있다.",
         "details": {
-            "effect" : ""
+            "effect" : "암시장에서 쐐기 화살을 구매할 수 있습니다. 공격당한 적을 도망치게 만드는 화살입니다."
         }
     },
     {
@@ -422,7 +422,7 @@
         "title": "뼈부적5",
         "eng_title": "Bonecharms5",
         "images_count": 2,
-        "content": "가장 높은 건물의 지붕에서 찾을 수 있다.",
+        "content": "가장 높은 건물의 지붕에서 찾을 수 있다. 무능력 플레이 시 일반적으로는 얻을 수 없지만 '고래기름 탱크 점프' 글리치를 사용하면 얻을 수 있다.",
         "details": {}
     },
     {
@@ -450,7 +450,7 @@
         "content": "회복실 안 하이페시아 박사 책상 위에서 찾을 수 있다.",
         "details": {
             "artist" : "Sergey Kolesov",
-            "artist_ingame" : "Anton Sokolov"
+            "artist_ingame" : "Delilah Copperspoon"
         }
     },
     {
@@ -554,5 +554,317 @@
         "images_count": 1,
         "content": "치료제를 완성하여 하이페시아 박사를 비살상으로 제압하면 획득할 수 있다.",
         "details": {}
-    }  
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "blackmarket",
+        "title": "암시장",
+        "eng_title": "Black Market",
+        "images_count": 8,
+        "content": "암시장의 옆 건물의 4층 발코니를 통해 내부로 들어간 뒤 지하로 내려가면 암시장 털이를 계획하는 두 명과 현관 열쇠가 있다. 아벤타 철도역에서 고래 기름 탱크를 얻은 뒤 총 3개의 기름 탱크를 폭파시키면 암시장의 뒤로 들어갈 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "safes",
+        "title": "사무실의 금고",
+        "eng_title": "The safe in the office",
+        "images_count": 3,
+        "content": "아벤타 철도역 옆 골목을 통해 들어갈 수 있는 건물 2층에 있는 금고는 바로 뒤 칠판에 비밀번호의 힌트가 적혀있다. 한 자리의 숫자는 알 수 없음으로 0~9까지 시도해봐야 한다.",
+        "details": {}
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "souvenir",
+        "title": "시계태엽병사의 머리",
+        "eng_title": "The head of a Clockwork Soldier",
+        "images_count": 1,
+        "content": "시계태엽병사를 파괴하면 얻을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "blueprints",
+        "title": "음향 피복 처리",
+        "eng_title": "Pyro-Sonic Casing",
+        "images_count": 4,
+        "content": "아벤타 철도역 매표소 안에서 얻을 수 있다. 매표소 열쇠는 암시장에서 구입하거나 암시장을 털어서 얻을 수 있다.",
+        "details": {
+            "effect" : "암시장에서 비명 화살을 구매할 수 있습니다. 적을 일시적으로 기절시키거나 눈을 멀게 만드는 화살입니다."
+        }
+    },
+    {
+        "id": "02",
+        "game": "d2",
+        "mission": "m4",
+        "type": "blueprints",
+        "title": "극성 합금",
+        "eng_title": "Alloy Polarization",
+        "images_count": 3,
+        "content": "아벤타 상층부 치안 주둔대 3층에서 찾을 수 있다.",
+        "details": {
+            "effect" : "자기력을 흘려 시계태엽 병사의 움직임을 방해하는 탄환입니다."
+        }
+    },
+    {
+        "id": "03",
+        "game": "d2",
+        "mission": "m4",
+        "type": "blueprints",
+        "title": "갑주 관통용 쐐기",
+        "eng_title": "Slug Splintering Wedges",
+        "images_count": 3,
+        "content": "진도쉬의 연구실 3층 책상 근처 서랍 속에서 찾을 수 있다.",
+        "details": {
+            "effect" : "적의 갑옷을 비롯하여 딱딱한 표면에서 도탄되는 탄환입니다."
+        }
+    },
+    {
+        "id": "04",
+        "game": "d2",
+        "mission": "m4",
+        "type": "blueprints",
+        "title": "극성 합금",
+        "eng_title": "Conductive Filaments",
+        "images_count": 4,
+        "content": "1층 접대실 근처 민간인 두 명이 있는 구역에서 손잡이를 내려 방 구조를 바꾸면 찾을 수 있다.",
+        "details": {
+            "effect" : "처음으로 감전당한 대상 근처의 적들을 추가로 감전시킵니다."
+        }
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "paintings",
+        "title": "확률을 점쳐보는 램지",
+        "eng_title": "Ramsey's Stochastic Eyes",
+        "images_count": 3,
+        "content": "아벤타 철도역 건너편 발코니를 통해 들어갈 수 있는 건물 안에서 찾을 수 있다.",
+        "details": {
+            "artist": "Cedric Peyravernay",
+            "artist_ingame": "Anton Sokolov"
+        }
+    },
+    {
+        "id": "02",
+        "game": "d2",
+        "mission": "m4",
+        "type": "paintings",
+        "title": "비대칭을 이루는 첩보경",
+        "eng_title": "The Spymaster's Axis of Asymmetry",
+        "images_count": 3,
+        "content": "아벤타 철도역 옆 건물의 3층에서 찾을 수 있다.",
+        "details": {
+            "artist": "Cedric Peyravernay",
+            "artist_ingame": "Anton Sokolov"
+        }
+    },
+    {
+        "id": "03",
+        "game": "d2",
+        "mission": "m4",
+        "type": "paintings",
+        "title": "분자에 대해 고심하는 진도쉬",
+        "eng_title": "Jindosh Considers An Odd Numerator",
+        "images_count": 2,
+        "content": "아벤타 상층부 송장 파리가 잠식한 건물 안에서 찾을 수 있다.",
+        "details": {
+            "artist": "Sergey Kolesov",
+            "artist_ingame": "Anton Sokolov"
+        }
+    },
+    {
+        "id": "04",
+        "game": "d2",
+        "mission": "m4",
+        "type": "paintings",
+        "title": "반대로 꺾어지는 빛줄기",
+        "eng_title": "Light Along the Inverse Curve, Sokolov's Self Portrait",
+        "images_count": 2,
+        "content": "진도쉬의 연구실 3층 책상 뒤에서 찾을 수 있다.",
+        "details": {
+            "artist": "Cedric Peyravernay",
+            "artist_ingame": "Anton Sokolov"
+        }
+    },
+    {
+        "id": "05",
+        "game": "d2",
+        "mission": "m4",
+        "type": "paintings",
+        "title": "기술공을 올려다보며",
+        "eng_title": "I Look Upon the Craftsman",
+        "images_count": 2,
+        "content": "2층 처소에서 찾을 수 있다. 보이지 않는다면 손잡이를 내려 구조를 바꿔야 할 수 있다.",
+        "details": {
+            "artist": "Sergey Kolesov",
+            "artist_ingame": "Delilah Copperspoon"
+        }
+    },
+    {
+        "id": "06",
+        "game": "d2",
+        "mission": "m4",
+        "type": "paintings",
+        "title": "미쳐버린 알렉산드리아의 핏빛 기하학",
+        "eng_title": "The Blood Topology of Grim Alex",
+        "images_count": 2,
+        "content": "조정실 미로 안 소콜로프 옆에서 찾을 수 있다.",
+        "details": {
+            "artist": "Sergey Kolesov",
+            "artist_ingame": "Anton Sokolov"
+        }
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적1",
+        "eng_title": "Bonecharms1",
+        "images_count": 4,
+        "content": "아벤타 철도역 건너편 발코니를 통해 들어갈 수 있는 건물 안에서 찾을 수 있다. 장식장 유리를 부셔야 얻을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "02",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적2",
+        "eng_title": "Bonecharms2",
+        "images_count": 4,
+        "content": "아벤타 철도역 옆 건물 3층에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "03",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적3",
+        "eng_title": "Bonecharms3",
+        "images_count": 3,
+        "content": "아벤타 철도역 2층에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "04",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적4",
+        "eng_title": "Bonecharms4",
+        "images_count": 3,
+        "content": "아벤타 상층부 치안 주둔대 2층에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "05",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적5",
+        "eng_title": "Bonecharms5",
+        "images_count": 3,
+        "content": "아벤타 상층부 송장 파리가 잠식한 건물 안에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "06",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적6",
+        "eng_title": "Bonecharms6",
+        "images_count": 3,
+        "content": "2층 처소에서 찾을 수 있다. 창문이 보이지 않는 구조로 만든 후 작은 작업실로 들어간 다음, 버튼을 눌러 구조를 다시 바꾸면 벽면에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "07",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적7",
+        "eng_title": "Bonecharms7",
+        "images_count": 3,
+        "content": "조정실에서 첫번째 승강기로 가는 길에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "08",
+        "game": "d2",
+        "mission": "m4",
+        "type": "bonecharms",
+        "title": "뼈부적8",
+        "eng_title": "Bonecharms8",
+        "images_count": 3,
+        "content": "1층 접대실 근처 창문을 통해 접근 가능한 통로에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "01",
+        "game": "d2",
+        "mission": "m4",
+        "type": "runes",
+        "title": "룬1,2",
+        "eng_title": "Rune1,2",
+        "images_count": 3,
+        "content": "하수도 출입구 근처 건물 3층에서 찾을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "02",
+        "game": "d2",
+        "mission": "m4",
+        "type": "runes",
+        "title": "룬3",
+        "eng_title": "Rune3",
+        "images_count": 3,
+        "content": "아벤타 철도역 뒤에서 찾을 수 있다. 임무 초반에는 선동가들이 잠복하고 있지만 시계태엽 저택에 갔다가 하층부로 돌아오면 선동가들이 없어져 있어서 쉽게 얻을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "03",
+        "game": "d2",
+        "mission": "m4",
+        "type": "runes",
+        "title": "룬4",
+        "eng_title": "Rune4",
+        "images_count": 1,
+        "content": "암시장에서 구입하거나 암시장을 털어서 얻을 수 있다.",
+        "details": {}
+    },
+    {
+        "id": "04",
+        "game": "d2",
+        "mission": "m4",
+        "type": "runes",
+        "title": "룬5",
+        "eng_title": "Rune5",
+        "images_count": 4,
+        "content": "아벤타 상층부 아파트 2층에서 찾을 수 있다. 책상 서랍에 들어있다.",
+        "details": {}
+    },
+    {
+        "id": "05",
+        "game": "d2",
+        "mission": "m4",
+        "type": "runes",
+        "title": "룬6",
+        "eng_title": "Rune6",
+        "images_count": 3,
+        "content": "진도쉬의 연구실 해부학 작업대 위에서 찾을 수 있다.",
+        "details": {}
+    }
 ]
