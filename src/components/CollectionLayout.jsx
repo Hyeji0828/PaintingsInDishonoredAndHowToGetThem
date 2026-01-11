@@ -1,13 +1,13 @@
-import {useState} from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BASE_URL, NAME_MAP, GROUP_ORDER } from "../constants/config";
 import Card from '../components/Card'
 
 const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
+    const [activeTab, setActiveTab] = useState(startTab);
+
     // 카테고리(Tab) 목록 + 중복 제거
     const categories = ["All", ...new Set(data.map(item=> item[tabField]))];
-
-    const [activeTab, setActiveTab] = useState(startTab);
 
     // 카테고리(Tab) 별로 필터링
     const filteredData = activeTab === "All"
@@ -22,6 +22,24 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
         return acc;
     }, {});
 
+    const [openGroups, setOpenGroups] = useState(
+        Object.keys(groupedData).reduce((acc,key) => ({ ...acc, [key]: true}), {})
+    );
+    const toggleGroup = (groupName) => {
+        setOpenGroups(prev => ({
+            ...prev,
+            [groupName]: !prev[groupName]
+        }));
+    };
+
+    useEffect(()=> {
+        const allOpen = Object.keys(groupedData).reduce((acc, key) => {
+            acc[key] = true;
+            return acc;
+        }, {});
+        setOpenGroups(allOpen);
+    }, [activeTab]);
+
     return (
     <div className="max-w-7xl mx-auto p-10">
         {/* Head */}
@@ -33,7 +51,7 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
         </div>
 
         {/* 카테고리(Tab) 선택창 */}
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex justify-center gap-4 mb-16 flex-wrap">
             {categories.map((tab) => (
                 <button
                     key={tab}
@@ -62,24 +80,39 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
 
                 return(
                     <section key={groupName}
-                             className="mb-16">
-                        <h2 className="font-dishonored text-2xl">
-                            {NAME_MAP[groupName]}
-                        </h2>
-                        <div>
-                            {itemsInGroup.map(item =>
-                                <motion.div
-                                    key={item.game + item.mission + item.type + item.id}
-                                    layout
-                                    initial={{opacity: 0, y: 20}}
-                                    animate={{opacity: 1, y: 0}}
-                                    exit={{opacity:0, scale: 0.9}}
-                                    transition={{duration:0.5}}
-                                >
-                                    <Card key={item.game + item.mission + item.type + item.id} {...item}/>
-                                </motion.div>
-                            )}
+                             className="mb-5 p-3">
+                        <div key= {groupName}
+                             className='cursor-pointer flex'
+                             onClick={() => toggleGroup(groupName)}
+                        >
+                            <svg
+                                className={`w-6 h-6 transition-transform duration-500 ${openGroups[groupName] ? '-rotate-180' : ''}`}
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <h2 className="font-dishonored text-2xl pl-3"
+                            >
+                                {NAME_MAP[groupName]}
+                            </h2>
                         </div>
+
+                        {openGroups[groupName] && (
+                            <div>
+                                {itemsInGroup.map(item =>
+                                    <motion.div
+                                        key={item.game + item.mission + item.type + item.id}
+                                        layout
+                                        initial={{opacity: 0, y: 20}}
+                                        animate={{opacity: 1, y: 0}}
+                                        exit={{opacity:0, scale: 0.9}}
+                                        transition={{duration:0.5}}
+                                    >
+                                        <Card key={item.game + item.mission + item.type + item.id} {...item}/>
+                                    </motion.div>
+                                )}
+                            </div>
+                        )}
                     </section>
                 );
             })}
