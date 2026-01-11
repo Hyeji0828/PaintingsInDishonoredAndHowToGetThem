@@ -133,7 +133,7 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                 >
                     {/* 이전 버튼 */}
                     <button
-                        className ="absolute left-4 md:left-10 text-white text-5xl hover-text-amber-500 transition-colors z-[60]"
+                        className ="absolute left-4 md:left-10 text-white text-5xl hover-text-amber-500 transition-colors z-[60] cursor-pointer"
                         onClick={prevImg}
                     >
                         &#10094;
@@ -149,7 +149,7 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
 
                     {/* 다음 버튼 */}
                     <button
-                        className ="absolute right-4 md:right-10 text-white text-5xl hover-text-amber-500 transition-colors z-[60]"
+                        className ="absolute right-4 md:right-10 text-white text-5xl hover-text-amber-500 transition-colors z-[60] cursor-pointer"
                         onClick={nextImg}
                     >
                         &#10095;
@@ -159,7 +159,6 @@ function Card({ id, game, type, mission, title, eng_title, images_count, content
                     <div className="absolute bottom-10 text-white font-mono">
                         {currentIndex + 1} / {allImages.length}
                     </div>
-
                     
                     <button className="absolute top-5 right-5 text-white text-3xl font-bold cursor-pointer">&times;</button>
                 </div>
