@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {BACKGROUND_IMGS} from '../constants/config';
+import Breadcrumb from './Breadcrumb';
 
 const AutoplayBackground = ({children, interval = 3000}) => {
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -40,6 +41,7 @@ const AutoplayBackground = ({children, interval = 3000}) => {
             </div>
 
             <main className="relative z-10 w-full">
+                <Breadcrumb/>
                 {children}
             </main>
         </div>
