@@ -25,3 +25,12 @@ export const GROUP_ORDER= {
     mission: ["All", "m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8", "m9"],
     type: ["All", "paintings", "safes", "souvenir", "blueprints", "runes", "bonecharms", "blackmarket"]
 };
+
+export const BACKGROUND_IMGS = [
+    '/CollectablesInDishonored/bg/dishonored_1_bg_1.jpg',
+    '/CollectablesInDishonored/bg/dishonored_1_bg_2.jpg',
+    '/CollectablesInDishonored/bg/dishonored_2_bg_1.jpg',
+    '/CollectablesInDishonored/bg/dishonored_2_bg_2.jpg',
+    '/CollectablesInDishonored/bg/dishonored_doto_bg_1.jpg',
+    '/CollectablesInDishonored/bg/dishonored_doto_bg_2.jpg',
+]
