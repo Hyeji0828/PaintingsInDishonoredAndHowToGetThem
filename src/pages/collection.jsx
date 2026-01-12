@@ -3,7 +3,7 @@ import data from "../data/data.json";
 
 const ByMission= () => {
     return(
-        <div className="min-h-screen bg-gray-100 py-10 px-4">
+        <div className="min-h-screen bg-transparent py-20 px-4">
             <div className="space-y-8">
                 <CollectionLayout
                 data = {data}
@@ -18,7 +18,7 @@ const ByMission= () => {
 
 const ByType= () => {
     return(
-        <div className="min-h-screen bg-gray-100 py-10 px-4">
+        <div className="min-h-screen bg-transparent py-20 px-4">
             <div className="space-y-8">
                 <CollectionLayout
                 data = {data}

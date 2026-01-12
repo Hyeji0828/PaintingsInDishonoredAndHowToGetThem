@@ -41,7 +41,7 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
     }, [activeTab]);
 
     return (
-    <div className="max-w-7xl mx-auto p-10">
+    <div className="max-w-7xl mx-auto">
         {/* Head */}
         <div className="flex justify-center">
             <img
@@ -80,7 +80,7 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
 
                 return(
                     <section key={groupName}
-                             className="mb-5 p-3">
+                             className="mb-5 p-3 text-white">
                         <div key= {groupName}
                              className='cursor-pointer flex'
                              onClick={() => toggleGroup(groupName)}

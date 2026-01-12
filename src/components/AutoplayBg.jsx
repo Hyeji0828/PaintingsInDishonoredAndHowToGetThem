@@ -23,22 +23,27 @@ const AutoplayBackground = ({children, interval = 3000}) => {
     const currentBackgroundImg = BACKGROUND_IMGS[currentImgIndex];
 
     return (
-        <div className='fixed -z-10 w-full h-full bg-black'>
-            <AnimatePresence>
-            <motion.div
-                key={currentBackgroundImg} // 키가 바뀌면 이전 이미지는 exit, 새 이미지는 initial 실행
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 2 }} // 2초 동안 천천히 오버랩
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${currentBackgroundImg})` }}
-            />
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center">
-                {children}
+        <div className='relative min-h-screen'>
+            <div className='fixed -z-10 w-full h-full bg-black pointer-events-none'>
+                <AnimatePresence initial={false}>
+                <motion.div
+                    key={currentBackgroundImg}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 2 }}
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${currentBackgroundImg})` }}
+                />
+                </AnimatePresence>
+                <div className='absolute inset-0 bg-black/60 flex flex-col justify-center items-center'/>
             </div>
+
+            <main className="relative z-10 w-full">
+                {children}
+            </main>
         </div>
+        
     );
 };
 

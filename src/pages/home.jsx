@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 import { BASE_URL } from "../constants/config";
 
 const Home = () => {
@@ -7,35 +8,52 @@ const Home = () => {
             <h1 className="text-6xl font-dishonored mt-3 mb-20 text-white border-white border-t border-b">Collectables In Dishonored</h1>
 
             {/* Dishonored 1 */}
-            <div className="flex flex-col items-center m-10">
-                <div className="w-md flex justify-center">
-                    <img src={`${BASE_URL}/Dishonored_1_logo.png`}/>
+            <motion.div
+                whileHover={{scale:1.05}}
+                transition={{duration:0.3, ease:"easeOut"}}
+            >
+                <div className="flex flex-col items-center m-10">
+                    <div className="w-md flex justify-center">
+                        <motion.img 
+                            src={`${BASE_URL}/Dishonored_1_logo.png`}
+                            whileHover={{scale:1.1}}
+                        />
+                    </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Dishonored 2 */}
-            <div className="flex flex-col items-center m-10">
-                <div className="w-md flex justify-center ">
-                    <img src={`${BASE_URL}/Dishonored_2_logo.png`}/>
+            <motion.div
+                whileHover={{scale:1.05}}
+                transition={{duration:0.3, ease:"easeOut"}}
+            >
+                <Link to="/Dishonored2">
+                <div className="flex flex-col items-center m-10 cursor-pointer">
+                    <div className="w-md flex justify-center ">
+                        <motion.img 
+                            src={`${BASE_URL}/Dishonored_2_logo.png`}
+                            whileHover={{scale:1.1}}
+                            />
+                    </div>
                 </div>
-                
-                {/* <div className= "flex gap-8">
-                    <Link to="/by-mission" className="">
-                        <h2 className="text-2xl font-dishonored border border-gray-300 p-10 shadow-lg">By Missions</h2>
-                    </Link>
-
-                    <Link to="/by-type" className="">
-                        <h2 className="text-2xl font-dishonored border border-gray-300 p-10 shadow-lg">By Collectable Types</h2>
-                    </Link>
-                </div> */}
-            </div>
-
+                </Link>
+            </motion.div>
+            
             {/* Dishonored DotO */}
-            <div className="flex flex-col items-center m-10">
-                <div className="w-md flex justify-center">
-                    <img src={`${BASE_URL}/Dishonored_DotO_logo.png`}/>
+            <motion.div
+                whileHover={{scale:1.05}}
+                transition={{duration:0.3, ease:"easeOut"}}
+            >
+                <div className="flex flex-col items-center m-10">
+                    <div className="w-md flex justify-center">
+                        <motion.img 
+                            src={`${BASE_URL}/Dishonored_DotO_logo.png`}
+                            whileHover={{scale:1.1}}
+                            />
+                    </div>
                 </div>
-            </div>
+            </motion.div>
+            
 
             <div className="fixed bottom-10 flex">
                 <h3 className="text-white font-anton text-2xl">Made by hyeji0828</h3>
