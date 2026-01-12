@@ -6,7 +6,7 @@ const Breadcrumb = () => {
     const pathnames = location.pathname.split('/').filter((x)=>x);
 
     return (
-      <nav className="flex items-center space-x-3 font-kor tracking-widest text-md text-white absolute left-5 top-3">
+      <nav className="flex items-center space-x-3 font-eng-title tracking-widest text-md text-white absolute left-5 top-3">
         <Link to="/" className="hover:text-primary">HOME</Link>
           {pathnames.map((value, index) => {
             const last = index === pathnames.length-1;
@@ -16,7 +16,7 @@ const Breadcrumb = () => {
               <div key={to} className="flex items-center space-x-2">
                 <span>&gt;</span>
                 {last ? (
-                  <span className='text-gray-300'>{value}</span>
+                  <span className='text-gray-300'>{value.replace('-',' ')}</span>
                 ) : (
                   <Link to={to} className='hover:text-primary'>{value}</Link>
                 )}

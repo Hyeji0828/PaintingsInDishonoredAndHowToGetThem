@@ -10,7 +10,7 @@ const Dishonored2 = () =>{
             />
             <div className="w-full max-w-md flex flex-col max-auto">
                 <div className="w-full mt-40 border-white border-t border-b hover:text-primary" >
-                    <Link to="/Dishonored2/by-mission">
+                    <Link to="/Dishonored2/By-mission">
                         <motion.div
                             whileHover={{scale:1.05}}
                             transition={{duration:0.3, ease:"easeOut"}}
@@ -21,7 +21,7 @@ const Dishonored2 = () =>{
                 </div>
 
                 <div className="w-full mt-30 border-white border-t border-b hover:text-primary" >
-                    <Link to="/Dishonored2/by-type">
+                    <Link to="/Dishonored2/By-type">
                         <motion.div
                             whileHover={{scale:1.05}}
                             transition={{duration:0.3, ease:"easeOut"}}

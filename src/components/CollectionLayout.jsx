@@ -57,10 +57,10 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
                     key={tab}
                     onClick={()=>setActiveTab(tab)}
                     className={`
-                        px-8 py-2 rounded-full transition-all duration-300 font-medium
+                        px-8 py-2 rounded-full transition-all duration-300 font-anton text-2xl
                         ${activeTab === tab
                             ? 'bg-primary text-white scale-105 shadow-lg' // 선택된
-                            : 'bg-gray-200 text-slate-500 hover:bg-slate-200' // 비선택
+                            : 'bg-gray-200 text-slate-600 hover:bg-slate-200' // 비선택
                         }
                     `}
                 >
@@ -91,7 +91,7 @@ const CollectionLayout = ({ data, tabField, groupField, startTab}) => {
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
-                            <h2 className="font-dishonored text-2xl pl-3"
+                            <h2 className="font-dishonored text-3xl pl-3"
                             >
                                 {NAME_MAP[groupName]}
                             </h2>

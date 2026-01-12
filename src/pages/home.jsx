@@ -5,7 +5,7 @@ import { BASE_URL } from "../constants/config";
 const Home = () => {
     return(
         <div className="flex flex-col items-center justify-center p-10 min-h-screen">
-            <h1 className="text-6xl font-dishonored mt-3 mb-20 text-white border-white border-t border-b">Collectables In Dishonored</h1>
+            <h1 className="text-4xl font-dishonored mt-3 mb-20 text-white border-white border-t border-b text-center">Collectables<br/>In<br/>Dishonored</h1>
 
             {/* Dishonored 1 */}
             <motion.div
